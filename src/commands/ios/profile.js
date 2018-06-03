@@ -10,7 +10,6 @@ module.exports = class ProfileCommand extends Command {
       group: 'ios',
       alias: ['prof'],
       description: 'Get a link to the TVOS profile for blocking updates',
-      examples: ['profile'],
       guildOnly: false,
       throttling: {
         usages: 2,

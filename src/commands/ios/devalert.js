@@ -10,7 +10,6 @@ module.exports = class DevAlertCommand extends Command {
       group: 'ios',
       alias: ['prof'],
       description: 'Objective C Sample code for alerts',
-      examples: ['devalert'],
       guildOnly: false,
       throttling: {
         usages: 2,

@@ -9,7 +9,6 @@ module.exports = class BlobAppCommand extends Command {
       group: 'ios',
       alias: ['blubapp'],
       description: 'Download link for TSS Saver Application',
-      examples: ['blubapp'],
       guildOnly: false,
       throttling: {
         usages: 2,

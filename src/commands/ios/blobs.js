@@ -9,7 +9,6 @@ module.exports = class BlobsCommand extends Command {
       group: 'ios',
       alias: ['blub'],
       description: 'Get a link to the TSS Saver website',
-      examples: ['blub', 'blubs'],
       guildOnly: false,
       throttling: {
         usages: 2,
