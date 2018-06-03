@@ -12,3 +12,9 @@ node_modules/
 
 # MacOS Settings
 .DS_Store
+
+# Data folders
+src/data/databases/*
+
+# Folder keep
+!**/*.gitkeep
