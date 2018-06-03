@@ -115,7 +115,8 @@ class AuxBot {
     this.client.registry
       .registerGroups([
         ['info', 'Info - Discord info at your fingertips'],
-        ['files', 'Files - File management system']
+        ['files', 'Files - File management system'],
+        ['ios', 'iOS - iOS  related info and links']
       ])
       .registerDefaultGroups()
       .registerDefaultTypes()
