@@ -3,10 +3,7 @@
     "version": "1.0.0",
     "description": "Post files to the Auxillium repo through bot commands",
     "author": "Auxillium (https://auxiliumdev.com/)",
-    "license": {
-        "type": "ABSE+JB",
-        "url": "https://github.com/Auxilium-Development/LittleX/blob/master/license.m"
-    },
+    "license": "SEE LICENSE IN LICENSE.md",
     "main": "src/app.js",
     "homepage": "https://github.com/Auxilium-Development/postbot",
     "repository": {
@@ -25,18 +22,21 @@
         "bot",
         "discord",
         "discord.js",
-        "Auxillium",
+        "Auxilium-Development",
         "NodeJS"
     ],
     "engines": {
         "node": ">=8.0.0 <11.0"
     },
     "dependencies": {
+        "better-sqlite3": "4.0.0",
         "common-tags": "^1.8.0",
         "discord.js": "favna/discord.js#main",
+        "discord.js-commando": "favna/commando#ribbon",
         "dotenv": "^5.0.1",
         "erlpack": "hammerandchisel/erlpack",
         "moment": "2.22.2",
+        "path": "^0.12.7",
         "snekfetch": "^3.6.4",
         "uws": "^9.148.0",
         "zlib-sync": "^0.1.4"
