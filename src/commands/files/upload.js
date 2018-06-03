@@ -1,6 +1,7 @@
 const fs = require('fs'),
   path = require('path'),
   request = require('snekfetch'),
+  shell = require('child_process'),
   {Command} = require('discord.js-commando'),
   {deleteCommandMessages} = require('../../components/util.js');
 
@@ -25,16 +26,21 @@ module.exports = class FileUploadCommand extends Command {
     return this.client.isOwner(msg.author) || msg.member.roles.some(r => r.name === 'Dev');
   }
 
-  run (msg) {
+  async run (msg) {
     if (msg.attachments && msg.attachments.first()) {
       if (!(/(deb|tar|png)/i).test(msg.attachments.first().file.name.slice(-3))) {
         return msg.reply('this command requires uploading a file in deb format');
       }
 
-      deleteCommandMessages(msg, this.client);
       request.get(msg.attachments.first().url).pipe(fs.createWriteStream(path.join(__dirname, `../../data/dist/${msg.attachments.first().file.name}`)));
-
-      return msg.reply('file uploaded');
+      
+      const statusMsg = await msg.reply('file queued for uploading');
+      
+      shell.spawn('sh', [path.join(__dirname, '../../data/debmover.sh')], {stdio: 'inherit'});
+      
+      deleteCommandMessages(msg, this.client);
+      
+      return statusMsg.edit('file has been published');
     }
 
     return msg.reply('please attach the debian package to the message when using this command');
