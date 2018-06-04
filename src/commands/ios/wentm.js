@@ -11,7 +11,7 @@ module.exports = class WentmCommand extends Command {
       aliases: ['weneta', 'wen'],
       description: 'YEEEETTTTTT',
       guildOnly: false,
-      patterns: [/(?!.*went.*|wend.*|wench.*|wed.*|rowen.*|twent.*)(wen|weneta|wen eta)/im],
+      patterns: [/(?!.*wen[a-df-z].*)(wen eta|weneta|wen)/im],
       throttling: {
         usages: 2,
         duration: 3
