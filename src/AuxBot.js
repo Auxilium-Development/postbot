@@ -116,7 +116,8 @@ class AuxBot {
       .registerGroups([
         ['info', 'Info - Discord info at your fingertips'],
         ['files', 'Files - File management system'],
-        ['ios', 'iOS - iOS  related info and links']
+        ['ios', 'iOS - iOS  related info and links'],
+        ['snippets', 'Snippets - Coding snippets stored in the bot']
       ])
       .registerDefaultGroups()
       .registerDefaultTypes()
