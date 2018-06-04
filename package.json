@@ -39,6 +39,7 @@
         "moment": "2.22.2",
         "moment-duration-format": "^2.2.2",
         "path": "^0.12.7",
+        "simple-git": "^1.95.1",
         "snekfetch": "^3.6.4",
         "speedtest-net": "^1.4.2",
         "uws": "^9.148.0",

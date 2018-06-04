@@ -33,13 +33,19 @@ module.exports = class FileUploadCommand extends Command {
       }
 
       request.get(msg.attachments.first().url).pipe(fs.createWriteStream(path.join(__dirname, `../../data/dist/${msg.attachments.first().file.name}`)));
-      
+
       const statusMsg = await msg.reply('file queued for uploading');
-      
-      shell.spawn('sh', [path.join(__dirname, '../../data/debmover.sh')], {stdio: 'inherit'});
-      
+
+      fs.renameSync(path.join(__dirname, `../../data/dist/${msg.attachments.first().file.name}`), `/var/www/repo/debs/${msg.attachments.first().file.name}`);
+      require('simple-git')('/var/www/repo') // eslint-disable-line global-require
+        .add(`debs/${msg.attachments.first().file.name}`)
+        .commit(`Committing ${msg.attachments.first().file.name}`)
+        .push('origin', 'gh-pages');
+
+      shell.spawn('sh', ['/var/www/repo/run.sh'], {stdio: 'inherit'});
+
       deleteCommandMessages(msg, this.client);
-      
+
       return statusMsg.edit('file has been published');
     }
 

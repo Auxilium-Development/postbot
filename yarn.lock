@@ -827,6 +827,12 @@ signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
+simple-git@^1.95.1:
+  version "1.95.1"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.95.1.tgz#8f23b998f0d9e877b12e0291200ce115e004878c"
+  dependencies:
+    debug "^3.1.0"
+
 slice-ansi@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-1.0.0.tgz#044f1a49d8842ff307aad6b505ed178bd950134d"
